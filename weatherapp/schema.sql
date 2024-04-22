@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS WEATHER;
+
+CREATE TABLE weather(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date_accessed TIMESTAMP NOT NULL DEFAULT
+    CURRENT_TIMESTAMP,
+    city TEXT NOT NULL,
+    country TEXT NOT NULL,
+    icon TEXT NOT NULL,
+    temperature FLOAT NOT NULL,
+    condition TEXT NOT NULL
+);

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My weather App</title>
+    <style>
+        body{
+            background: rgb(77, 229, 255);
+  background:linear-gradient(
+    rgb(255, 255, 255) 0%,
+    rgb(0, 0, 0) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-position: center;
+  color: white;
+        }
+        input{
+            height: 40px;
+    -webkit- border-radius: 20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+     border:2px solid  black;}
+     .m-box{
+        display: flex;
+  align-items: center;
+     }
+     h1{color: black;}
+
+     .temperature{
+        float:top right;
+        background-color: black;
+        height:500px ;
+        width: 500px;
+        align-items: center;
+        padding: 10px;
+        margin: auto;
+        flex-direction: column;
+        display:flex;
+        text-align: center;
+
+     }
+     .submit{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        
+     }
+     h2{
+        font-size: 50px;
+     }
+    </style>
+</head>
+
+<body >
+<div >
+    <h1 >Weather App</h1>
+    <form action="/" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <input type="text" id="cityName" name="cityName" placeholder="City"class="form-control">
+                </div>
+                <div class="col-sm">
+                    <input type="text" id="stateName" name="stateName"placeholder="state" class="form-control">
+                </div>
+                <div class="col-sm">
+                    <input type="text" id="countryName" name="countryName"placeholder="country" class="form-control">
+                </div>
+            </div>
+        </div> <br>
+        <button class="submit">Find</button>
+    </form><div class="temperature">
+    {%if data%}<h2>
+    {{data.main}}: {{data.description}} {{data.lat}} {{data.lon}}</h2><br>
+    <img src="https://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="icon">
+  <h2>  {{data.temperature}} C</h2>
+    {% endif %}
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
